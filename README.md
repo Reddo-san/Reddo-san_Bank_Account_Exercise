@@ -1,4 +1,4 @@
-**Version 0.2A*** - Updated Freeze, Insufficient Funds, and Invalid Amount into Exception Handlings\
+##Version 0.2A - **Updated Freeze, Insufficient Funds, and Invalid Amount into Exception Handlings**\
                 - Date: 2026-10-26\
                 - Added AccountFrozenException\
                 - Added InsufficientFundsException\
