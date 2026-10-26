@@ -71,6 +71,7 @@ public class Main {
     //Create a new account under Bank Account Manager
     SavingsAccount acc2 = new SavingsAccount("Test1");
     manager.addAccount(acc2);
+    //SavingsAccount acc3 = (SavingsAccount) acc1;
 
     //List all the created account under Bank Account Manager
     manager.listAccounts();
