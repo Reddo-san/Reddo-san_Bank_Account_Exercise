@@ -55,12 +55,8 @@ public class Main {
     deposit(acc1, 200.13);
 
     // Display transaction history
-    System.out.println("Transaction History:");
-    for (Transaction transaction : acc1.getTransactionHistory()) {
-      System.out.println("Type: " + transaction.getType() 
-                + ", Amount: " + transaction.getAmount()
-                + ", Timestamp: " + transaction.getTimestamp());
-    }
+    System.out.println("Transaction history: ");
+    System.out.println(acc1.getTransactionHistory());
 
     //Create a Bank Account Manager
     BankAccountManager manager = new BankAccountManager();

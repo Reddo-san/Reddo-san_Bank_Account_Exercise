@@ -11,11 +11,21 @@ public class BankAccountManager implements Bank {
   private final Map<Integer, BankAccount> accounts;
   private int id;
 
+  /**
+   * Creates an account manager with no accounts and an initial ID of zero.
+   */
   public BankAccountManager() {
     accounts = new HashMap<>();
     id = 0;
   }
 
+  /**
+   * Adds an account and assigns it the next available ID.
+   *
+   * @param account the account to add
+   * @throws NullPointerException if {@code account} is {@code null}
+   * @throws IllegalStateException if the manager already contains 100 accounts
+   */
   @Override
   public void addAccount(BankAccount account) {
     Objects.requireNonNull(account, "account");
@@ -24,20 +34,29 @@ public class BankAccountManager implements Bank {
     }
 
     accounts.put(id, account);
+    System.out.println("Account added successfully with ID: " + id);
     id++;
   }
 
+  /**
+   * Returns the account associated with an ID.
+   *
+   * @param id the ID to look up
+   * @return the account for that ID, or {@code null} if no account exists
+   */
   @Override
   public BankAccount getAccount(int id) {
     return accounts.get(id);
   }
 
-  @Override
+  /**
+   * Displays each account's ID, owner's name, and balance.
+   */
   public void listAccounts() {
     for (Map.Entry<Integer, BankAccount> entry : accounts.entrySet()) {
       BankAccount account = entry.getValue();
-      System.out.printf("ID: %d, Owner: %s, Balance: %.2f%n",
-          entry.getKey(), account.getOwnerName(), account.getBalance());
+      System.out.printf("Account ID: %d, Account Name: %s, Balance: %s%n",
+          entry.getKey(), account.getOwnerName(), Double.toString(account.getBalance()));
     }
   }
 
