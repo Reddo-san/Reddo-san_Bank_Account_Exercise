@@ -1,3 +1,5 @@
+import java.util.List;
+
 /**
  * Main class that demonstrates a savings account and bank account management.
  */
@@ -84,6 +86,17 @@ public class Main {
     //withdraw with a negative amount to test the withdrawal validation
     withdraw(acc1, -100.0); // This should not be allowed
 
+    //Filter transactions with an amount greater than or equal to 200.0
+    List<Transaction> filteredTransactions = manager.filterTransactionsAtOrAbove(
+        200.0, acc1.getTransactionHistory());
+    System.out.println("Filtered transactions (amount >= 200.0):");
+    filteredTransactions.forEach(System.out::println);
+
+    //sort transactions in ascending order based on the amount
+    List<Transaction> sortedTransactions = manager.sortTransactionsByAmount(
+        acc1.getTransactionHistory());
+    System.out.println("Sorted transactions (ascending by amount):");
+    sortedTransactions.forEach(System.out::println);
 
   }
 
